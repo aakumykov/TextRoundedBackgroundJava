@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
 
-class SingleLineRenderer extends TextRoundedBgRenderer {
+public class SingleLineRenderer extends TextRoundedBgRenderer {
 
     private int horizontalPadding;
     private int verticalPadding;

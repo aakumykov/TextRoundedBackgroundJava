@@ -3,7 +3,7 @@ package com.github.aakumykov.lib;
 import android.graphics.Canvas;
 import android.text.Layout;
 
-abstract class TextRoundedBgRenderer {
+public abstract class TextRoundedBgRenderer {
 
     private int horizontalPadding;
     private int verticalPadding;

@@ -1,8 +1,8 @@
 package com.github.aakumykov.textroundedbackgroundjava;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Sample activity that uses [com.github.aakumykov.lib.RoundedBgTextView].

@@ -13,12 +13,12 @@ import androidx.appcompat.widget.AppCompatTextView;
  *
  * See [TextRoundedBgAttributeReader] for supported attributes.
  */
-public class RoundedBgTextView extends AppCompatTextView {
+public class RoundedBgTextView2 extends AppCompatTextView {
 
     private TextRoundedBgHelper textRoundedBgHelper;
 
 
-    public RoundedBgTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RoundedBgTextView2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         TextRoundedBgAttributeReader attributeReader = new TextRoundedBgAttributeReader(context, attrs);
