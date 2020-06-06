@@ -6,27 +6,7 @@ import android.text.Annotation;
 import android.text.Layout;
 import android.text.Spanned;
 
-/**
- * Helper class to draw multi-line rounded background to certain parts of a text. The start/end
- * positions of the backgrounds are annotated with [android.text.Annotation] class. Each annotation
- * should have the annotation key set to **rounded**.
- *
- * i.e.:
- * ```
- *    <!--without the quotes at the begining and end Android strips the whitespace and also starts
- *        the annotation at the wrong position-->
- *    <string name="ltr">"this is <annotation key="rounded">a regular</annotation> paragraph."</string>
- * ```
- *
- * **Note:** BiDi text is not supported.
- *
- * @param horizontalPadding the padding to be applied to left & right of the background
- * @param verticalPadding the padding to be applied to top & bottom of the background
- * @param drawable the drawable used to draw the background
- * @param drawableLeft the drawable used to draw left edge of the background
- * @param drawableMid the drawable used to draw for whole line
- * @param drawableRight the drawable used to draw right edge of the background
- */
+
 public class TextRoundedBgHelper {
 
     private TextRoundedBgRenderer singleLineRenderer;
@@ -39,6 +19,27 @@ public class TextRoundedBgHelper {
     private Drawable drawableMid;
     private Drawable drawableRight;
 
+    /**
+     * Helper class to draw multi-line rounded background to certain parts of a text. The start/end
+     * positions of the backgrounds are annotated with [android.text.Annotation] class. Each annotation
+     * should have the annotation key set to **rounded**.
+     *
+     * i.e.:
+     * ```
+     *    <!--without the quotes at the begining and end Android strips the whitespace and also starts
+     *        the annotation at the wrong position-->
+     *    <string name="ltr">"this is <annotation key="rounded">a regular</annotation> paragraph."</string>
+     * ```
+     *
+     * **Note:** BiDi text is not supported.
+     *
+     * @param horizontalPadding the padding to be applied to left & right of the background
+     * @param verticalPadding the padding to be applied to top & bottom of the background
+     * @param drawable the drawable used to draw the background
+     * @param drawableLeft the drawable used to draw left edge of the background
+     * @param drawableMid the drawable used to draw for whole line
+     * @param drawableRight the drawable used to draw right edge of the background
+     */
     public TextRoundedBgHelper(
             int horizontalPadding,
             int verticalPadding,
