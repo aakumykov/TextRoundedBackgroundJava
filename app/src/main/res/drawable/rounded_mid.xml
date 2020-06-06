@@ -14,13 +14,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<resources>
-    <color name="colorPrimary">#DDD</color>
-    <color name="colorPrimaryDark">#CCC</color>
-    <color name="colorAccent">#FF7F50</color>
-
-    <color name="divider">#CCC</color>
-
-    <color name="roundedBg">#FFF176</color>
-    <color name="roundedBorder">#CABF45</color>
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/roundedBg"/>
+    <stroke android:width="@dimen/roundedBorderWidth" android:color="@color/roundedBorder"/>
+</shape>

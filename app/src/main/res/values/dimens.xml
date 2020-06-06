@@ -15,12 +15,9 @@
   ~ limitations under the License.
   -->
 <resources>
-    <color name="colorPrimary">#DDD</color>
-    <color name="colorPrimaryDark">#CCC</color>
-    <color name="colorAccent">#FF7F50</color>
+    <dimen name="textViewMargin">8dp</dimen>
+    <dimen name="dividerHeight">1dp</dimen>
 
-    <color name="divider">#CCC</color>
-
-    <color name="roundedBg">#FFF176</color>
-    <color name="roundedBorder">#CABF45</color>
+    <dimen name="roundedBorderRadius">6dp</dimen>
+    <dimen name="roundedBorderWidth">2dp</dimen>
 </resources>
