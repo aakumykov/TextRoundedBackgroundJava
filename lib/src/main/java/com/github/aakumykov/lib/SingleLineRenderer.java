@@ -16,10 +16,14 @@ class SingleLineRenderer extends TextRoundedBgRenderer {
      * @param horizontalPadding the padding to be applied to left & right of the background
      * @param verticalPadding   the padding to be applied to top & bottom of the background
      */
-    public SingleLineRenderer(int horizontalPadding, int verticalPadding, int horizontalPadding1, int verticalPadding1, Drawable drawable) {
+    public SingleLineRenderer(
+            int horizontalPadding,
+            int verticalPadding,
+            Drawable drawable
+    ) {
         super(horizontalPadding, verticalPadding);
-        this.horizontalPadding = horizontalPadding1;
-        this.verticalPadding = verticalPadding1;
+        this.horizontalPadding = horizontalPadding;
+        this.verticalPadding = verticalPadding;
         this.drawable = drawable;
     }
 
