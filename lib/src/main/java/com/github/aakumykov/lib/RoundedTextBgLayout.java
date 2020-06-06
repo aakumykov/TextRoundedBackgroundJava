@@ -28,6 +28,33 @@ public abstract class RoundedTextBgLayout extends Layout {
         super(text, paint, width, align, spacingMult, spacingAdd);
     }
 
+
+    /**
+     * Returns the top of the Layout after removing the extra padding applied by  the Layout.
+     */
+    public int getLineTopWithoutPadding(int line) {
+        int lineTop = getLineTop(line);
+        if (0 == line) {
+            lineTop -= getTopPadding();
+        }
+        return lineTop;
+    }
+
+    /**
+     * Returns the bottom of the Layout after removing the extra padding applied by the Layout.
+     */
+    public int getLineBottomWithoutPadding(int line) {
+        int lineBottom = getLineBottomWithoutSpacing(line);
+        if (line == (getLineCount() - 1)) {
+            lineBottom -= getBottomPadding();
+        }
+        return lineBottom;
+    }
+
+
+    /**
+     * Get the line bottom discarding the line spacing added.
+     */
     public int getLineBottomWithoutSpacing(int line) {
         int lineBottom = getLineBottom(line);
         boolean lastLineSpacingNotAdded = Build.VERSION.SDK_INT >= 19;
@@ -58,7 +85,11 @@ public abstract class RoundedTextBgLayout extends Layout {
         return lineBottomWithoutSpacing;
     }
 
+    /**
+     * Get the line height of a line.
+     */
     public int getLineHeight(int line) {
-
+        return getLineTop(line + 1) - getLineTop(line);
     }
+
 }
