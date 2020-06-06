@@ -9,9 +9,6 @@ import android.text.Spanned;
 
 public class TextRoundedBgHelper {
 
-    private TextRoundedBgRenderer singleLineRenderer;
-    private TextRoundedBgRenderer multiLineRenderer;
-
     private int horizontalPadding;
     private int verticalPadding;
     private Drawable drawable;
@@ -87,8 +84,11 @@ public class TextRoundedBgHelper {
                 int endOffset = (int) (layout.getPrimaryHorizontal(spanEnd)
                         + layout.getParagraphDirection(endLine) * horizontalPadding);
 
-                TextRoundedBgRenderer renderer = (startLine == endLine) ?
-                        singleLineRenderer : multiLineRenderer;
+                TextRoundedBgRenderer renderer = (startLine == endLine)
+                        ?
+                        new SingleLineRenderer(horizontalPadding, verticalPadding, drawable)
+                        :
+                        new MultiLineRenderer(horizontalPadding, verticalPadding, drawableLeft, drawableMid, drawableRight);
 
                 renderer.draw(canvas, layout, startLine, endLine, startOffset, endOffset);
             }
