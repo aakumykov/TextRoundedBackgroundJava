@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ * Sample activity that uses [com.github.aakumykov.lib.RoundedBgTextView].
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
