@@ -2,9 +2,11 @@ package com.github.aakumykov.textroundedbackgroundjava;
 
 import android.os.Bundle;
 import android.text.Annotation;
+import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +17,8 @@ import com.github.aakumykov.lib.RoundedBgTextView;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,15 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
         RoundedBgTextView roundedBgTextView = findViewById(R.id.textView);
 
-        SpannableString spannableString = new SpannableString("My spantastic text");
+        /*SpannableString spannableString = new SpannableString("My spantastic text");
         Annotation annotation = new Annotation("key", "rounded");
         spannableString.setSpan(annotation, 3, 7, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-        roundedBgTextView.setText(spannableString);
+        roundedBgTextView.setText(spannableString);*/
 
-        /*
-        SpannableString spannableString = new SpannableString("this is <annotation key='rounded'>a regular</annotation> paragraph.");
-        textView.setText(spannableString);
 
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Любой кот линяет. Из выпавшей шерсти можно собрать второго кота. По такой же аналогии из Java можно создать новый язык Kotlin, образованный из двух слов Kot linяет. Есть ещё неправдоподобная версия об острове в Финском заливе, которая просто смешна и не заслуживает внимания.");
@@ -39,17 +40,16 @@ public class MainActivity extends AppCompatActivity {
         String text = stringBuilder.toString();
 
         String[] textParts = text.split("\\.\\s+");
-        Annotation annotation = new Annotation("key", "rounded");
-        String annotatedText = "";
 
         for (int i=0; i<textParts.length; i++) {
-            String sentence = textParts[i];
+            String sentence = textParts[i] + ".";
+
             SpannableString spannableString = new SpannableString(sentence);
-            spannableString.setSpan(annotation, 0, sentence.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            annotatedText += spannableString + " ";
+            spannableString.setSpan(new Annotation("key", "rounded"), 0, sentence.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            roundedBgTextView.append(spannableString);
+            roundedBgTextView.append("  ");
         }
 
-//        textView.setText(text);
-        textView.setText(annotatedText);*/
     }
 }
