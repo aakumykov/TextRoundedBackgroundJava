@@ -8,22 +8,22 @@ import android.util.AttributeSet;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
-public class QwertyTextView extends AppCompatTextView {
+public class RoundedBgTextView extends AppCompatTextView {
 
     private TextRoundedBgHelper textRoundedBgHelper;
 
 
-    public QwertyTextView(Context context) {
+    public RoundedBgTextView(Context context) {
         super(context);
         throw new RuntimeException("Cannot use QwertyTextView with constructor with only context argument");
     }
 
-    public QwertyTextView(Context context, AttributeSet attrs) {
+    public RoundedBgTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public QwertyTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RoundedBgTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
