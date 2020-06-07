@@ -37,6 +37,7 @@ public class RoundedBgTextView extends AppCompatTextView {
         // need to draw bg first so that text can be on top during super.onDraw()
         if (text instanceof Spanned && null != layout)
         {
+            canvas.save();
             canvas.translate((float) getTotalPaddingLeft(), (float) getTotalPaddingRight());
 
             textRoundedBgHelper.draw(canvas, (Spanned) text, layout);

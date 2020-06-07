@@ -14,10 +14,13 @@ public class LayoutHelper {
      * Returns the top of the Layout after removing the extra padding applied by  the Layout.
      */
     public static int getLineTopWithoutPadding(Layout layout, int line) {
+
         int lineTop = layout.getLineTop(line);
+
         if (0 == line) {
             lineTop -= layout.getTopPadding();
         }
+
         return lineTop;
     }
 
@@ -25,10 +28,13 @@ public class LayoutHelper {
      * Returns the bottom of the Layout after removing the extra padding applied by the Layout.
      */
     public static int getLineBottomWithoutPadding(Layout layout, int line) {
+
         int lineBottom = getLineBottomWithoutSpacing(layout, line);
+
         if (line == (layout.getLineCount() - 1)) {
             lineBottom -= layout.getBottomPadding();
         }
+
         return lineBottom;
     }
 

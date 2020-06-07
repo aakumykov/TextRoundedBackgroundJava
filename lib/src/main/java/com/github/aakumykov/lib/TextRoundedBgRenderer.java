@@ -46,7 +46,7 @@ public abstract class TextRoundedBgRenderer {
      * @param line line number
      */
     protected int getLineTop(Layout layout, int line) {
-        return LayoutHelper.getLineBottomWithoutPadding(layout, line) - verticalPadding;
+        return LayoutHelper.getLineTopWithoutPadding(layout, line) - verticalPadding;
     }
 
     /**
