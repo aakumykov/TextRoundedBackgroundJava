@@ -57,7 +57,7 @@ public class MultiLineRenderer extends TextRoundedBgRenderer {
         drawStart(canvas, startOffset, lineTop, lineEndOffset, lineBottom);
 
         // for the lines in the middle draw the mid drawable
-        for (int lineNum=startLine; lineNum < endLine; lineNum++) {
+        for (int lineNum=startLine+1; lineNum < endLine; lineNum++) {
             lineTop = getLineTop(layout, lineNum);
             lineBottom = getLineBottom(layout, lineNum);
             drawableMid.setBounds(
