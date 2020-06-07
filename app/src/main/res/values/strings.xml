@@ -15,7 +15,7 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name">Rounded Multiline Bg</string>
+    <string name="app_name">Rounded Multiline Bg Java</string>
 
     <!-- Without the quotes at the begining and end Android strips the whitespace and also starts
     the annotation at the wrong position. -->

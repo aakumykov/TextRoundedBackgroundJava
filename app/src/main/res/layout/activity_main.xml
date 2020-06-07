@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/ltr"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dividerHeight"/>
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/ltr_multi"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dividerHeight"/>
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/ltr_long"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dividerHeight"/>
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/rtl"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dividerHeight"/>
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/rtl_multi"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dividerHeight"/>
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/lang1"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dividerHeight"/>
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/lang2"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
@@ -107,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dividerHeight"/>
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/lang3"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
@@ -118,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dividerHeight"/>
 
-        <com.android.example.text.styling.roundedbg.RoundedBgTextView
+        <com.github.aakumykov.lib.QwertyTextView
             android:text="@string/lang4"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
