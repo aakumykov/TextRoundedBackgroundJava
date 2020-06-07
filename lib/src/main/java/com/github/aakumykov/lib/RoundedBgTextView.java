@@ -38,11 +38,9 @@ public class RoundedBgTextView extends AppCompatTextView {
         if (text instanceof Spanned && null != layout)
         {
             canvas.save();
-            canvas.translate((float) getTotalPaddingLeft(), (float) getTotalPaddingRight());
-
+            canvas.translate((float) getTotalPaddingLeft(), (float) getTotalPaddingTop());
             textRoundedBgHelper.draw(canvas, (Spanned) text, layout);
-
-            canvas.restoreToCount(canvas.getSaveCount());
+            canvas.restore();
         }
 
         super.onDraw(canvas);
@@ -50,7 +48,8 @@ public class RoundedBgTextView extends AppCompatTextView {
 
 
     private void init(Context context, AttributeSet attrs) {
-        TextRoundedBgAttributeReader attributeReader = new TextRoundedBgAttributeReader(context, attrs);
+        TextRoundedBgAttributeReader attributeReader =
+                new TextRoundedBgAttributeReader(context, attrs);
 
         textRoundedBgHelper = new TextRoundedBgHelper(
                 attributeReader.horizontalPadding,
