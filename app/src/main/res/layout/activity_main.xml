@@ -27,11 +27,12 @@
         android:orientation="vertical">
 
         <com.github.aakumykov.lib.RoundedBgTextView
-            android:text="Текст"
+            android:id="@+id/textView"
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/textViewMargin"/>
+            android:layout_margin="@dimen/textViewMargin"
+            android:text="Текст" />
 
     </LinearLayout>
 
