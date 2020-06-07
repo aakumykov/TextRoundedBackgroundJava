@@ -46,8 +46,7 @@ public abstract class TextRoundedBgRenderer {
      * @param line line number
      */
     protected int getLineTop(Layout layout, int line) {
-        RoundedTextBgLayout roundedTextBgLayout = (RoundedTextBgLayout) layout;
-        return roundedTextBgLayout.getLineTopWithoutPadding(line) - verticalPadding;
+        return LayoutHelper.getLineBottomWithoutPadding(layout, line) - verticalPadding;
     }
 
     /**
@@ -58,7 +57,6 @@ public abstract class TextRoundedBgRenderer {
      * @param line line number
      */
     protected int getLineBottom(Layout layout, int line) {
-        RoundedTextBgLayout roundedTextBgLayout = (RoundedTextBgLayout) layout;
-        return roundedTextBgLayout.getLineBottomWithoutPadding(line) - verticalPadding;
+        return LayoutHelper.getLineBottomWithoutPadding(layout, line) - verticalPadding;
     }
 }
