@@ -31,7 +31,11 @@
             style="@style/Widget.RoundedBackground.SampleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/textViewMargin" />
+            android:layout_margin="@dimen/textViewMargin"
+            android:lineSpacingExtra="0dp"
+            android:lineSpacingMultiplier="1.2"
+            android:textSize="24sp"
+            tools:text="В применяемый в uBlock Origin фильтр EasyPrivacy добавлены правила для блокировки типовых скриптов сканирования сетевых портов на локальной системе пользователя. Напомним, что в мае было выявлено сканирование локальных портов при открытии сайта eBay.com." />
 
     </LinearLayout>
 
