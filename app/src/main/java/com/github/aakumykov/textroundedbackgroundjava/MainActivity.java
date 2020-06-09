@@ -2,10 +2,13 @@ package com.github.aakumykov.textroundedbackgroundjava;
 
 import android.os.Bundle;
 import android.text.Annotation;
+import android.text.Layout;
+import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RoundedBgTextView roundedBgTextView = findViewById(R.id.roundedBgTextView);
-        TextView simpleTextView = findViewById(R.id.simpleTextView);
+        RoundedBgTextView roundedBgTextView = findViewById(R.id.textView);
 
         /*SpannableString spannableString = new SpannableString("My spantastic text");
         Annotation annotation = new Annotation("key", "rounded");
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 //            roundedBgTextView.append(spannableString);
 //            roundedBgTextView.append("  ");*/
 
-            String text = "Язык назван в честь острова Котлин в Финском заливе, на котором расположен город Кронштадт.";
+            String text = "Язык назван в честь острова Котлин в Финском заливе, на котором расположен город Кронштадт[4].";
 
             SpannableString spannableString = new SpannableString(text);
 
@@ -120,14 +122,9 @@ public class MainActivity extends AppCompatActivity {
 
             spannableString.setSpan(clickableSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-//            roundedBgTextView.setTextColor(fgColor);
+            roundedBgTextView.setTextColor(fgColor);
 
             roundedBgTextView.setText(spannableString);
-
-            SpannableString spannableString2 = new SpannableString(text);
-            spannableString2.setSpan(clickableSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-            simpleTextView.setText(spannableString2);
         }
 }
 
