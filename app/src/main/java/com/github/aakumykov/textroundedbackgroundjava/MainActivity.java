@@ -6,8 +6,12 @@ import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.style.ClickableSpan;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.aakumykov.lib.RoundedBgTextView;
@@ -44,8 +48,19 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0; i<textParts.length; i++) {
             String sentence = textParts[i] + ".";
 
+            int sentenceLength = sentence.length();
+
             SpannableString spannableString = new SpannableString(sentence);
-            spannableString.setSpan(new Annotation("key", "rounded"), 0, sentence.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(new Annotation("key", "rounded"), 0, sentenceLength, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            ClickableSpan clickableSpan = new ClickableSpan() {
+                @Override
+                public void onClick(@NonNull View widget) {
+                    Toast.makeText(widget.getContext(), "Ты нажал", Toast.LENGTH_SHORT).show();
+                }
+            };
+
+            spannableString.setSpan(clickableSpan, 0, sentenceLength, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
             roundedBgTextView.append(spannableString);
             roundedBgTextView.append("  ");
