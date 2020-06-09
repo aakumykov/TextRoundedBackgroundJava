@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         roundedBgTextView.setText(spannableString);*/
 
-        StringBuilder stringBuilder = new StringBuilder();
+        /*StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Любой кот линяет. Из выпавшей шерсти можно собрать второго кота. По такой же аналогии из Java можно создать новый язык Kotlin, образованный из двух слов Kot linяет. Есть ещё неправдоподобная версия об острове в Финском заливе, которая просто смешна и не заслуживает внимания.");
         stringBuilder.append("Kotlin (Ко́тлин) — статически типизированный, объектно-ориентированный язык программирования, работающий поверх Java Virtual Machine и разрабатываемый компанией JetBrains. Также компилируется в JavaScript и в исполняемый код ряда платформ через инфраструктуру LLVM. Язык назван в честь острова Котлин в Финском заливе, на котором расположен город Кронштадт[4]. ");
 
@@ -84,29 +84,47 @@ public class MainActivity extends AppCompatActivity {
 
             spannableString.setSpan(clickableSpan, 0, sentenceLength, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-            roundedBgTextView.setText(spannableString);
-
 //            roundedBgTextView.append(spannableString);
-//            roundedBgTextView.append("  ");
+//            roundedBgTextView.append("  ");*/
+
+            String text = "Язык назван в честь острова Котлин в Финском заливе, на котором расположен город Кронштадт[4].";
+
+            SpannableString spannableString = new SpannableString(text);
+
+            final int fgColor = getResources().getColor(android.R.color.black);
+
+            ClickableSpan clickableSpan = new ClickableSpan() {
+                @Override
+                public void onClick(@NonNull View view) {
+                    if (view instanceof TextView) {
+                        TextView textView = (TextView) view;
+                        Spanned spanned = (Spanned) textView.getText();
+
+                        int start = spanned.getSpanStart(this);
+                        int end = spanned.getSpanEnd(this);
+                        CharSequence text = spanned.subSequence(start, end).toString();
+
+                        Toast.makeText(view.getContext(), text, Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void updateDrawState(@NonNull TextPaint ds) {
+                    super.updateDrawState(ds);
+                    ds.setUnderlineText(false);
+                    ds.setColor(fgColor);
+                }
+            };
+
+            Annotation annotation = new Annotation("mode", "rounded");
+
+            spannableString.setSpan(annotation, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            spannableString.setSpan(clickableSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            roundedBgTextView.setTextColor(fgColor);
+
+            roundedBgTextView.setText(spannableString);
         }
-
-    }
-
-    private static class MySpan extends ClickableSpan {
-        @Override
-        public void onClick(@NonNull View widget) {
-            if (widget instanceof TextView) {
-                TextView textView = (TextView) widget;
-                Spanned spanned = (Spanned) textView.getText();
-
-                int start = spanned.getSpanStart(this);
-                int end = spanned.getSpanEnd(this);
-                CharSequence text = spanned.subSequence(start, end).toString();
-
-                Log.d(TAG, "onClick [" + text + "]");
-
-                Toast.makeText(widget.getContext(), text, Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 }
+
