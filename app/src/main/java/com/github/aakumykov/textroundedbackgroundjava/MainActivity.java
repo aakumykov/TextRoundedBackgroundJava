@@ -2,11 +2,14 @@ package com.github.aakumykov.textroundedbackgroundjava;
 
 import android.os.Bundle;
 import android.text.Annotation;
+import android.text.Layout;
+import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,19 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
             final int fgColor = getResources().getColor(android.R.color.black);
 
-            ClickableSpan clickableSpan = new TransparentClickableSpan(fgColor, new TextClickListener() {
-                @Override
-                public void onTextClicked(String text) {
-                    Spanned spanned = (Spanned) textView.getText();
-
-                    int start = spanned.getSpanStart(this);
-                    int end = spanned.getSpanEnd(this);
-                    CharSequence text = spanned.subSequence(start, end).toString();
-
-                    Toast.makeText(widget.getContext(), text, Toast.LENGTH_SHORT).show();
-                }
-            });
-
+            ClickableSpan clickableSpan = new TransparentClickableSpan(fgColor);
             spannableString.setSpan(clickableSpan, 0, sentenceLength, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
             roundedBgTextView.append(spannableString);
@@ -71,26 +62,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    interface TextClickListener {
-        void onTextClicked(String text);
-    }
-
     private static class TransparentClickableSpan extends ClickableSpan {
-
         private int fgColor;
-        private TextClickListener textClickListener;
 
-        public TransparentClickableSpan(int fgColor, TextClickListener textClickListener) {
+        public TransparentClickableSpan(int fgColor) {
             this.fgColor = fgColor;
-            this.textClickListener = textClickListener;
         }
 
         @Override
         public void onClick(@NonNull View widget) {
             if (widget instanceof TextView) {
                 TextView textView = (TextView) widget;
-                String text = textView.getText().toString();
-                textClickListener.onTextClicked(text);
+                Spanned spanned = (Spanned) textView.getText();
+
+                int start = spanned.getSpanStart(this);
+                int end = spanned.getSpanEnd(this);
+                CharSequence text = spanned.subSequence(start, end).toString();
+
+                Toast.makeText(widget.getContext(), text, Toast.LENGTH_SHORT).show();
             }
         }
 
